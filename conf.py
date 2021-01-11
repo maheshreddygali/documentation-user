@@ -1,28 +1,24 @@
-# -*- coding: utf-8 -*-
+import os
+import sys
+from pathlib import Path
+
 from pygments.lexers.web import PhpLexer
 from sphinx.highlighting import lexers
-import sys
-import os
-import sphinx
 
 
 # monkeypatch PHP lexer to not require <?php
 lexers['php'] = PhpLexer(startinline=True)
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-DIR = os.path.dirname(__file__)
-sys.path.insert(
-    0, os.path.abspath(
-        os.path.join(DIR, 'extensions')
-    )
-)
+# If extensions (or modules to document with autodoc) are in another dir, add them to PYTHONPATH
+extension_dir = Path('extensions')
+sys.path.insert(0, str(extension_dir.absolute()))
 
-build_dev_doc = False
-if os.path.exists('../odoo/odoo-bin'):
-    build_dev_doc = True
-    # put current odoo's source on PYTHONPATH for autodoc
-    sys.path.insert(0, os.path.abspath(os.path.join(DIR, '../odoo')))
+# Search for the directory of odoo sources to know whether the dev doc should be built
+build_developer_doc = False
+odoo_dir = Path('odoo')
+if odoo_dir.exists() and odoo_dir.is_dir():
+    build_developer_doc = True
+    sys.path.insert(0, str(odoo_dir.absolute()))
 
 # -- General configuration ------------------------------------------------
 
@@ -111,7 +107,7 @@ exclude_patterns = [
     'bin', 'include', 'lib',
 ]
 
-if not build_dev_doc:
+if not build_developer_doc:
     exclude_patterns += ["developer", "developer.rst"]
 
 # The specifications of redirect rules used by the redirects extension.
