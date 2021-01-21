@@ -18,8 +18,7 @@ all: html
 
 help:
 	@echo "Please use 'make <target>' where <target> is one of"
-	@echo "  html_light   to build the documentation to HTML with a collapsed menu (faster)"
-	@echo "  html         to build the documentation to HTML with a fully expandable menu (slower)"
+	@echo "  html         to build the documentation to HTML"
 	@echo "  clean        to delete the build files"
 
 clean:
@@ -28,8 +27,8 @@ clean:
 	$(RM_CMD) extensions/odoo_ext/static/style.css
 	@echo "Cleaning finished."
 
-light: SPHINXOPTS += -A collapse_menu=True
-light: html
+edi: SPHINXOPTS += -A collapse_menu=True
+edi: clean html
 
 html: extensions/odoo_ext/static/style.css
 	@echo "Starting build..."
