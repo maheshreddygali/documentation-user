@@ -228,7 +228,7 @@ class Patch(Directive):
         }
         if changed:
             attrs['emphasize-lines'] = changed
-        return sphinx.directives.LiteralInclude(
+        return sphinx.directives.code.LiteralInclude(
             self.name,
             [filepath],
             attrs,
@@ -259,7 +259,7 @@ class Patch(Directive):
         """ Formats and displays a complete result file, after having applied
         the current patch directive
         """
-        return sphinx.directives.LiteralInclude(
+        return sphinx.directives.code.LiteralInclude(
             self.name,
             [filepath],
             {'linenos': True, 'language': lang},
