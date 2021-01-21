@@ -2,7 +2,7 @@
 
 SPHINX_BUILD   = sphinx-build
 CONFIG_DIR     = .
-SPHINXOPTS     =
+SPHINXOPTS     = -A google_analytics_key=$(GOOGLE_ANALYTICS_KEY)
 SOURCE_DIR     = content
 BUILD_DIR      = _build
 

@@ -389,9 +389,6 @@ def setup(app):
     app.add_config_value('canonical_root', os.path.dirname(os.path.realpath(__file__)), 'env')
     app.add_config_value('canonical_branch', 'master', 'env')
 
-    app.connect('html-page-context', analytics)
-    app.add_config_value('google_analytics_key', '', 'env')
-
     app.connect('html-page-context', versionize)
     # VFE TODO before merge, remove the default value put for testing
     test_versions = ['12.0', '13.0', '14.0']  # TODO if not provided, use 'local'
@@ -423,11 +420,6 @@ def versionize(app, pagename, templatename, context, doctree):
         if vs != app.config.version
     ]
 
-def analytics(app, pagename, templatename, context, doctree):
-    if not app.config.google_analytics_key:
-        return
-
-    context['google_analytics_key'] = app.config.google_analytics_key
 
 def tag_toctrees(app, doctree, docname):
     """ Adds a 'toc' metadata entry to all documents containing a toctree node"""
