@@ -23,7 +23,7 @@ if odoo_dir.exists() and odoo_dir.is_dir():
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-needs_sphinx = '2.0.0'
+needs_sphinx = '3.0.0'
 
 # Warn all references where target cannot be found
 # but doesn't seem to like Odoo architecture
@@ -380,8 +380,7 @@ LANGUAGES = {
 }
 
 def setup(app):
-    # VFE NOTE: if bump to version > 1.8: html_js_files & html_css_files
-    # conf attributes can be used instead.
+    # VFE TODO: use html_js_files & html_css_files conf attributes instead.
     # app.add_stylesheet('css/accounting.css')
     # app.add_stylesheet('css/legal.css')
 
@@ -395,7 +394,7 @@ def setup(app):
 
     app.connect('html-page-context', versionize)
     # VFE TODO before merge, remove the default value put for testing
-    test_versions = ['12.0', '13.0', '14.0']
+    test_versions = ['12.0', '13.0', '14.0']  # TODO if not provided, use 'local'
     app.add_config_value('versions', ",".join(test_versions), 'env')
 
     app.connect('html-page-context', localize)
@@ -403,7 +402,11 @@ def setup(app):
     test_languages = ['fr', 'en', 'es']
     app.add_config_value('languages', ",".join(test_languages), 'env')
 
-    app.connect('doctree-resolved', tag_toctrees)
+    app.connect('doctree-resolved', tag_toctrees)  # TODO ANVFE not used + typo
+
+
+def export_collapse_menu_option(app, pagename, templatename, context, doctree):
+    context['collapse_menu'] = app.config.collapse_menu
 
 
 def versionize(app, pagename, templatename, context, doctree):

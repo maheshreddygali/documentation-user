@@ -2,6 +2,7 @@
 
 SPHINX_BUILD   = sphinx-build
 CONFIG_DIR     = .
+SPHINXOPTS     =
 SOURCE_DIR     = content
 BUILD_DIR      = _build
 
@@ -13,21 +14,29 @@ else
 endif
 
 # In first position to build the documentation from scratch by default
-all: clean html
+all: clean html_light
 
 help:
 	@echo "Please use 'make <target>' where <target> is one of"
-	@echo "  html       to build the documentation to HTML"
-	@echo "  clean      to clear the build"
-
-html: extensions/odoo_ext/static/style.css
-	$(SPHINX_BUILD) -c $(CONFIG_DIR) -b html $(SOURCE_DIR) $(BUILD_DIR)/html
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILD_DIR)/html."
-
-extensions/odoo_ext/static/style.css: extensions/odoo_ext/static/*.scss
-	pysassc $(subst .css,.scss,$@) $@
+	@echo "  html_light to build the documentation to HTML with a collapsed menu (faster)"
+	@echo "  html to build the documentation to HTML with a fully expandable menu (slower)"
+	@echo "  clean to delete the build files"
 
 clean:
+	@echo "Cleaning build files..."
 	$(RM_CMD) $(BUILD_DIR)/*
 	$(RM_CMD) extensions/odoo_ext/static/style.css
+	@echo "Cleaning finished."
+
+html_light: SPHINXOPTS += -A collapse_menu=True
+html_light: html
+
+html: extensions/odoo_ext/static/style.css
+	@echo "Starting build..."
+	$(SPHINX_BUILD) -c $(CONFIG_DIR) -b html $(SPHINXOPTS) $(SOURCE_DIR) $(BUILD_DIR)/html
+	@echo "Build finished."
+
+extensions/odoo_ext/static/style.css: extensions/odoo_ext/static/*.scss
+	@echo "Compiling stylesheets..."
+	pysassc $(subst .css,.scss,$@) $@
+	@echo "Compilation finished."
