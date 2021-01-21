@@ -20,7 +20,6 @@ def setup(app):
     app.add_config_value('patchqueue_sections', ['changes'], 'env')
     app.connect('env-updated', add_statics)
 
-    import pudb; pudb.set_trace()
     app.add_directive('queue', Queue)
     app.add_directive('patch', Patch)
 
