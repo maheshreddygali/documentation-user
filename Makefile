@@ -14,7 +14,7 @@ else
 endif
 
 # In first position to build the documentation from scratch by default
-all: html_light
+all: html
 
 help:
 	@echo "Please use 'make <target>' where <target> is one of"
@@ -28,8 +28,8 @@ clean:
 	$(RM_CMD) extensions/odoo_ext/static/style.css
 	@echo "Cleaning finished."
 
-html_light: SPHINXOPTS += -A collapse_menu=True
-html_light: html
+light: SPHINXOPTS += -A collapse_menu=True
+light: html
 
 html: extensions/odoo_ext/static/style.css
 	@echo "Starting build..."
