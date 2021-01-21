@@ -9,7 +9,7 @@
             // If the page TOC has less than 2 headings, in addition to the title, hide it entirely
             if (headingRefs.length <= 2) {
                 _hidePageTOC(pageTOC);
-                return
+                return;
             }
 
             // Allow to hide the TOC entry referring the title (<h1> heading)
@@ -74,7 +74,7 @@
         const _unflagAll = (pageToc) => {
             pageToc.querySelectorAll('li,ul').forEach(element => {
                 element.classList.remove('active', 'show');
-            })
+            });
         };
 
         const _flagActiveHierarchy = (headingRef, pageToc) => {
