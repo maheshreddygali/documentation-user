@@ -14,13 +14,13 @@ else
 endif
 
 # In first position to build the documentation from scratch by default
-all: clean html_light
+all: html_light
 
 help:
 	@echo "Please use 'make <target>' where <target> is one of"
-	@echo "  html_light to build the documentation to HTML with a collapsed menu (faster)"
-	@echo "  html to build the documentation to HTML with a fully expandable menu (slower)"
-	@echo "  clean to delete the build files"
+	@echo "  html_light   to build the documentation to HTML with a collapsed menu (faster)"
+	@echo "  html         to build the documentation to HTML with a fully expandable menu (slower)"
+	@echo "  clean        to delete the build files"
 
 clean:
 	@echo "Cleaning build files..."
