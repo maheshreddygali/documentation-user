@@ -111,7 +111,7 @@ if not build_developer_doc:
     exclude_patterns += ["developer", "developer.rst"]
 
 # The specifications of redirect rules used by the redirects extension.
-redirects_file = 'redirects.txt'
+redirects_file = '../redirects.txt'
 
 # markdown compatibility: make `foo` behave like ``foo``, the rst default is
 # title-reference which is never what people are looking for
