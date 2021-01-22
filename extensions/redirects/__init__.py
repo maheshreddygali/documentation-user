@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 def generate_redirects(app):
     path = os.path.join(app.srcdir, app.config.redirects_file)
     if not os.path.exists(path):
-        logger.debug("Could not find redirects file at '%s'", path)
+        logger.warning("Could not find redirects file at '%s'", path)
         return
 
     source_suffix = next(iter(app.config.source_suffix))

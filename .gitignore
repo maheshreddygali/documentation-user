@@ -5,3 +5,6 @@
 # Sphinx build files
 _build/
 extensions/odoo_ext/static/style.css
+
+# Dependencies
+odoo

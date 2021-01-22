@@ -4,6 +4,9 @@ from pathlib import Path
 
 from pygments.lexers.web import PhpLexer
 from sphinx.highlighting import lexers
+from sphinx.util import logging
+
+_logger = logging.getLogger(__name__)
 
 
 # monkeypatch PHP lexer to not require <?php
@@ -14,11 +17,18 @@ extension_dir = Path('extensions')
 sys.path.insert(0, str(extension_dir.absolute()))
 
 # Search for the directory of odoo sources to know whether the dev doc should be built
-build_developer_doc = False
 odoo_dir = Path('odoo')
 if odoo_dir.exists() and odoo_dir.is_dir():
-    build_developer_doc = True
+    odoo_dir_in_path = True
     sys.path.insert(0, str(odoo_dir.absolute()))
+else:
+    odoo_dir_in_path = False
+    _logger.warning(
+        f"Could not find Odoo sources directory at {odoo_dir.absolute()}.\n"
+        "The 'Developer' documentation will be built but autodoc directives will be skipped.\n"
+        "In order to fully build the 'Developer' documentation, clone the repository with "
+        "`git clone https://github.com/odoo/odoo`."
+    )
 
 # -- General configuration ------------------------------------------------
 
@@ -35,9 +45,12 @@ needs_sphinx = '3.0.0'
 extensions = [
     # Basic Sphinx extensions
     'sphinx.ext.ifconfig',
-    'sphinx.ext.todo',  # Support the specialized directive
-    'sphinx.ext.intersphinx',  # Link sources in other projects (used to build the reference doc)
-    'sphinx.ext.autodoc',  # Parse Python docstrings (autodoc, automodule, autoattribute directives)
+    # Support the specialized to-do directives
+    'sphinx.ext.todo',
+    # Link sources in other projects (used to build the reference doc)
+    'sphinx.ext.intersphinx',
+    # Parse Python docstrings (autodoc, automodule, autoattribute directives)
+    'sphinx.ext.autodoc' if odoo_dir_in_path else 'autodoc_placeholder',
 
     # GitHub links generation
     'sphinx.ext.linkcode',
@@ -52,7 +65,7 @@ extensions = [
     'embedded_video',
 
     # 'autojsdoc.ext',
-    'html_domain',
+    'html_domain',  # TODO ANVFE remove?
 
     'exercise_admonition',
 
@@ -107,11 +120,11 @@ exclude_patterns = [
     'bin', 'include', 'lib',
 ]
 
-if not build_developer_doc:
-    exclude_patterns += ["developer", "developer.rst"]
+# if not build_developer_doc:
+#     exclude_patterns += ["developer", "developer.rst"]
 
 # The specifications of redirect rules used by the redirects extension.
-redirects_file = 'redirects.txt'
+redirects_file = '../redirects.txt'
 
 # markdown compatibility: make `foo` behave like ``foo``, the rst default is
 # title-reference which is never what people are looking for
