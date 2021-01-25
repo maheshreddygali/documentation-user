@@ -4,7 +4,10 @@
 @import "scss/_mixins";
 @import "scss/_typography";
 
-
+// TODO EDI remove
+aside#o_page_toc .active > a{
+    background-color: red;
+}
 
 div[aria-label="related navigation"] {
     display: none;

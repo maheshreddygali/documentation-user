@@ -88,19 +88,25 @@
             }
         };
 
-        const _tmp = ev => {
-            console.log("ok");
-            const headingRef = ev.target.closest('a[href^="#"]');
-            if (!headingRef) {
-                return;
+        this.scrollTriggeredByClick = false;
+        this.pageToc.addEventListener('click', ev => {
+            const clickedHeadingRef = ev.target.closest('a[href^="#"]');
+            if (clickedHeadingRef) {
+                this.scrollTriggeredByClick = true;
+                setTimeout(() => {
+                    _updateFlags();
+                    this.scrollTriggeredByClick = false;
+                }, 750);
             }
-            this.clickScrolling = true;
-            resetAnchors(toc, anchor);
-        };
+        });
+        document.addEventListener('scroll', () => {
+            if (!this.scrollTriggeredByClick) {
+                _updateFlags();
+            }
+        });
 
         let lastActiveHeadingRef = undefined; // Init as `undefined` to allow an initial update
         _updateFlags(); // Flag initially active sections before the first scroll event
-        document.addEventListener('scroll', _updateFlags);
     };
 
     /**
