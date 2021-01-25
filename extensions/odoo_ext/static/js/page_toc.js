@@ -89,10 +89,16 @@
         };
 
         let clickedHeadingRef = undefined;
-        document.addEventListener('scroll', _updateFlags);
         this.pageToc.addEventListener('click', ev => {
-            clickedHeadingRef = ev.target.closest('a[href^="#"]');
-            setTimeout(() => clickedHeadingRef = undefined, 750);
+            clickedHeadingRef = ev.target.closest('a[href^="#"]'); // Highlight the clicked ref
+        });
+        let timeoutId = undefined;
+        document.addEventListener('scroll', () => {
+            timeoutId = setTimeout(() => {
+                clickedHeadingRef = undefined; // Go back to highlighting the heading ref in view
+            }, 100);
+            clearTimeout(timeoutId); // For each scroll event, cancel the previous timeout callback
+            _updateFlags();
         });
 
         let lastActiveHeadingRef = undefined; // Init as `undefined` to allow an initial update
