@@ -37,6 +37,8 @@ Fiscal Localization Packages available
 - Colombia
 
   - Colombian - Accounting
+  - Colombian - Electronic Invoicing
+  - Colombian - Financial Reports
   - Colombian - Point of Sale
 
 - Costa Rica - Accounting
@@ -106,7 +108,12 @@ Fiscal Localization Packages available
 - Norway - Accounting
 - OHADA - Accounting
 - Panama - Accounting
-- Peru - Accounting
+- Peru
+
+  - Peruvian Accounting
+  - Peruvian Accounting Reports
+  - Peruvian Electronic Invoicing
+
 - Poland - Accounting
 - Portugal - Accounting
 - Romania - Accounting
