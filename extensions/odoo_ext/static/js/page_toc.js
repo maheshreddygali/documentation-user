@@ -33,7 +33,7 @@
     const _flagActiveTocEntriesAndLists = () => {
 
         const _updateFlags = () => {
-            const activeHeadingRef = _findActiveHeadingRef();
+            const activeHeadingRef = clickedHeadingRef || _findActiveHeadingRef();
             if (
                 lastActiveHeadingRef // `undefined` on the first update
                 && activeHeadingRef.href === lastActiveHeadingRef.href
@@ -88,21 +88,11 @@
             }
         };
 
-        this.scrollTriggeredByClick = false;
+        let clickedHeadingRef = undefined;
+        document.addEventListener('scroll', _updateFlags);
         this.pageToc.addEventListener('click', ev => {
-            const clickedHeadingRef = ev.target.closest('a[href^="#"]');
-            if (clickedHeadingRef) {
-                this.scrollTriggeredByClick = true;
-                setTimeout(() => {
-                    _updateFlags();
-                    this.scrollTriggeredByClick = false;
-                }, 750);
-            }
-        });
-        document.addEventListener('scroll', () => {
-            if (!this.scrollTriggeredByClick) {
-                _updateFlags();
-            }
+            clickedHeadingRef = ev.target.closest('a[href^="#"]');
+            setTimeout(() => clickedHeadingRef = undefined, 750);
         });
 
         let lastActiveHeadingRef = undefined; // Init as `undefined` to allow an initial update
