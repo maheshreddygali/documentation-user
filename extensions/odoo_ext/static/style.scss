@@ -522,8 +522,9 @@ header.o_main_header{
 //------------------------------------------------------------------------------
 
 #wrap {
-    position: relative;
-    top: $o-header-height;
+    margin-top: $o-header-height;
+    display: flex;
+    justify-content: space-between;
     main{
         position: relative;
         padding-top: 3rem;
@@ -909,11 +910,13 @@ header.o_main_header{
 
         @include media-breakpoint-up(lg) {
             display: block;
-            position: fixed;
+            position: -webkit-sticky;
+            position: sticky;
             top: $o-header-height;
             right: 0;
             width: $o-on-page-width;
-            padding: 3rem;
+            height: calc(100% - #{$o-header-height});
+            padding: 3rem 3rem 3rem 1rem;
             font-size: .9rem;
 
             /* &.affix {
