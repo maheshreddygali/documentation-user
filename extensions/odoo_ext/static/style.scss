@@ -526,6 +526,12 @@ header.o_main_header{
 // Main page content
 //------------------------------------------------------------------------------
 
+// TODO EDI this fixes the scroll height issue but surely need to be done in another way
+section {
+  padding-top: $o-header-height;
+  margin-top: -$o-header-height;
+}
+
 #wrap {
     margin-top: $o-header-height;
     display: flex;
