@@ -6,8 +6,371 @@
 
 // TODO EDI remove
 aside#o_page_toc .active > a{
-    background-color: red;
+  background-color: red;
 }
+
+//------------------------------------------------------------------------------
+// icomoon icons
+//------------------------------------------------------------------------------
+
+[class^="i-"], [class*=" i-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+.i-accountant {
+  &:before {
+    content: $i-accountant;
+  }
+}
+.i-advanced {
+  &:before {
+    content: $i-advanced;
+  }
+}
+.i-app_features {
+  &:before {
+    content: $i-app_features;
+  }
+}
+.i-app-favorites {
+  &:before {
+    content: $i-app-favorites;
+  }
+}
+.i-apps_1 {
+  &:before {
+    content: $i-apps_1;
+  }
+}
+.i-apps_2 {
+  &:before {
+    content: $i-apps_2;
+  }
+}
+.i-basics {
+  &:before {
+    content: $i-basics;
+  }
+}
+.i-cart {
+  &:before {
+    content: $i-cart;
+  }
+}
+.i-certifications {
+  &:before {
+    content: $i-certifications;
+  }
+}
+.i-check {
+  &:before {
+    content: $i-check;
+  }
+}
+.i-collaborating {
+  &:before {
+    content: $i-collaborating;
+  }
+}
+.i-compare {
+  &:before {
+    content: $i-compare;
+  }
+}
+.i-contact {
+  &:before {
+    content: $i-contact;
+  }
+}
+.i-customer-reviews {
+  &:before {
+    content: $i-customer-reviews;
+  }
+}
+.i-developer {
+  &:before {
+    content: $i-developer;
+  }
+}
+.i-doc-admin {
+  &:before {
+    content: $i-doc-admin;
+  }
+}
+.i-doc-apps {
+  &:before {
+    content: $i-doc-apps;
+  }
+}
+.i-doc-contribute {
+  &:before {
+    content: $i-doc-contribute;
+  }
+}
+.i-doc-dev {
+  &:before {
+    content: $i-doc-dev;
+  }
+}
+.i-doc-services {
+  &:before {
+    content: $i-doc-services;
+  }
+}
+.i-documentation {
+  &:before {
+    content: $i-documentation;
+  }
+}
+.i-elearning_1 {
+  &:before {
+    content: $i-elearning_1;
+  }
+}
+.i-elearning_2 {
+  &:before {
+    content: $i-elearning_2;
+  }
+}
+.i-events {
+  &:before {
+    content: $i-events;
+  }
+}
+.i-exercise {
+  &:before {
+    content: $i-exercise;
+  }
+}
+.i-finances {
+  &:before {
+    content: $i-finances;
+  }
+}
+.i-forums {
+  &:before {
+    content: $i-forums;
+  }
+}
+.i-github {
+  &:before {
+    content: $i-github;
+  }
+}
+.i-hr {
+  &:before {
+    content: $i-hr;
+  }
+}
+.i-info {
+  &:before {
+    content: $i-info;
+  }
+}
+.i-install {
+  &:before {
+    content: $i-install;
+  }
+}
+.i-jobs {
+  &:before {
+    content: $i-jobs;
+  }
+}
+.i-knowledge {
+  &:before {
+    content: $i-knowledge;
+  }
+}
+.i-lightbulb {
+  &:before {
+    content: $i-lightbulb;
+  }
+}
+.i-marketing {
+  &:before {
+    content: $i-marketing;
+  }
+}
+.i-money-bag {
+  &:before {
+    content: $i-money-bag;
+  }
+}
+.i-money-plant {
+  &:before {
+    content: $i-money-plant;
+  }
+}
+.i-note {
+  &:before {
+    content: $i-note;
+  }
+}
+.i-o-edu {
+  &:before {
+    content: $i-o-edu;
+  }
+}
+.i-o-help {
+  &:before {
+    content: $i-o-help;
+  }
+}
+.i-o-logo {
+  &:before {
+    content: $i-o-logo;
+  }
+}
+.i-o-services {
+  &:before {
+    content: $i-o-services;
+  }
+}
+.i-o-tour {
+  &:before {
+    content: $i-o-tour;
+  }
+}
+.i-operations_1 {
+  &:before {
+    content: $i-operations_1;
+  }
+}
+.i-operations_2 {
+  &:before {
+    content: $i-operations_2;
+  }
+}
+.i-overview {
+  &:before {
+    content: $i-overview;
+  }
+}
+.i-partners {
+  &:before {
+    content: $i-partners;
+  }
+}
+.i-performance {
+  &:before {
+    content: $i-performance;
+  }
+}
+.i-release {
+  &:before {
+    content: $i-release;
+  }
+}
+.i-sales_2 {
+  &:before {
+    content: $i-sales_2;
+  }
+}
+.i-sales_3 {
+  &:before {
+    content: $i-sales_3;
+  }
+}
+.i-sales_1 {
+  &:before {
+    content: $i-sales_1;
+  }
+}
+.i-scaleup {
+  &:before {
+    content: $i-scaleup;
+  }
+}
+.i-search {
+  &:before {
+    content: $i-search;
+  }
+}
+.i-services {
+  &:before {
+    content: $i-services;
+  }
+}
+.i-shop {
+  &:before {
+    content: $i-shop;
+  }
+}
+.i-showcase {
+  &:before {
+    content: $i-showcase;
+  }
+}
+.i-support {
+  &:before {
+    content: $i-support;
+  }
+}
+.i-themes {
+  &:before {
+    content: $i-themes;
+  }
+}
+.i-time-management_2 {
+  &:before {
+    content: $i-time-management_2;
+  }
+}
+.i-time-management {
+  &:before {
+    content: $i-time-management;
+  }
+}
+.i-translate {
+  &:before {
+    content: $i-translate;
+  }
+}
+.i-tutorial {
+  &:before {
+    content: $i-tutorial;
+  }
+}
+.i-users {
+  &:before {
+    content: $i-users;
+  }
+}
+.i-v12 {
+  &:before {
+    content: $i-v12;
+  }
+}
+.i-v13 {
+  &:before {
+    content: $i-v13;
+  }
+}
+.i-v14 {
+  &:before {
+    content: $i-v14;
+  }
+}
+.i-warning {
+  &:before {
+    content: $i-warning;
+  }
+}
+.i-websites {
+  &:before {
+    content: $i-websites;
+  }
+}
+
+
 
 div[aria-label="related navigation"] {
     display: none;
@@ -22,6 +385,9 @@ body {
         margin-left: 1rem;
     }
 }
+//------------------------------------------------------------------------------
+// Header with logo, searchbar and switchers
+//------------------------------------------------------------------------------
 
 header.o_main_header{
     display: flex;
@@ -43,7 +409,7 @@ header.o_main_header{
                 height: $o-header-height;
                 display: flex;
                 align-items: center;
-                img {
+                img {
                     margin-top: -12px;
                     margin-right: 1rem;
                 }
@@ -70,6 +436,10 @@ header.o_main_header{
         width: 120px;
     }
 }
+
+//------------------------------------------------------------------------------
+// Left side nav toctree
+//------------------------------------------------------------------------------
 
 .o_side_nav {
     width: $o-side-nav-width;
@@ -116,23 +486,23 @@ header.o_main_header{
 
         > .toctree-l1 {
             > a:before {
-                @include inline-icon('img/icons/doc-apps.svg' , 30px, 0 1rem 0 0);
+                @include inline-icomoon($i-doc-apps, 0 1rem 0 0);
                 margin-left: -30px;
             }
-            /* &.o_menu_applications > a:before{
-                background-image: url("img/icons/doc-apps.svg");
-            } */
+            &.o_menu_applications > a:before{
+                content:'#{$i-doc-apps}';
+            }
             &.o_menu_administration > a:before{
-                background-image: url("img/icons/doc-admin.svg");
+                content:'#{$i-doc-admin}';
             }
             &.o_menu_developer > a:before{
-                background-image: url("img/icons/doc-dev.svg");
+                content:'#{$i-doc-dev}';
             }
             &.o_menu_services > a:before{
-                background-image: url("img/icons/doc-services.svg");
+                content:'#{$i-doc-services}';
             }
             &.o_menu_contributing > a:before{
-                background-image: url("img/icons/doc-contribute.svg");
+                content:'#{$i-doc-contribute}';
             }
 
         }
@@ -152,9 +522,14 @@ header.o_main_header{
     }
 }
 
+//------------------------------------------------------------------------------
+// Main page content
+//------------------------------------------------------------------------------
+
 #wrap {
-    position: relative;
-    top: $o-header-height;
+    margin-top: $o-header-height;
+    display: flex;
+    justify-content: space-between;
     main{
         position: relative;
         padding-top: 3rem;
@@ -177,6 +552,9 @@ header.o_main_header{
                 width: calc(100vw - #{$o-side-nav-width});
             }
         }
+
+        // Homepage
+
         &.index{
             h2[class*="o_title_"] {
                 color: $o-violet-darker;
@@ -252,58 +630,72 @@ header.o_main_header{
                 margin-bottom: 1rem;
             }
         }
-        &.has_code_col{
+        &.has_code_col {
 
             article.doc-body {
+
                 > *{
                   max-width: 100%;
                 }
+
                 section {
                     position: relative;
                     display:block;
                     float: left;
                     width: 100%;
                 }
+
                 @include media-breakpoint-up(lg) {
                     width: 100%;
                     padding-right: 0;
+
                     &:before {
                         @include code-col();
                     }
+
                     section {
+
                         > * {
                             width: 54.633333%;
                             max-width: 600px;
                             float: left;
                             clear: left;
                         }
+
                         > h1, > h2, > h3, > h4, > h5, > h6 {
                             float: none;
                             clear: none;
                         }
+
                         .doc-aside {
                             width: 43%;
                             float: none;
                             clear: none;
                             margin-left: 57%;
                             padding: 1rem;
+
                             p, blockquote, tr, th, li {
                                 color: $gray-light;
                             }
+
                             blockquote {
                                 color: $gray-light;
                                 font-family: $font-family-serif;
                                 font-weight: $fw_semibold;
                                 font-style: italic;
                             }
+
                             h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
                                 color: $white;
                             }
-                            pre{
+
+                            pre {
                                 font-size: 12px;
                             }
-                            .content-switcher{
+
+                            .content-switcher {
                                 margin-top:0;
+
                                 > ul {
                                   margin-bottom: 0;
                                 }
@@ -316,40 +708,46 @@ header.o_main_header{
                     }
                 }
             }
+
             + aside.o_page_toc{
                 display: none;
             }
         }
+
         article {
             position: relative;
 
             .o_git_link {
-            color: $gray-light;
-            @include o-position-absolute($top: 0, $right: 1rem);
+                color: $gray-light;
+                @include o-position-absolute($top: 0, $right: 1rem);
 
                 &:before{
                     @include inline-icon('img/icons/edit.svg' , 18px, 0 .5rem 0 0);
                 }
             }
+
             h1 {
                 margin-bottom: 2rem;
             }
 
-            h2{
+            h2 {
                 color: $gray-darker;
                 padding-bottom: .5rem;
                 border-bottom: 1px solid $gray-light;
                 margin-bottom: 2rem;
                 margin-top: 2rem;
+
                 &::after{
                     @include inline-icon('img/icons/link.svg' , 24px, 0 0 0 1rem);
                 }
             }
+
             h3 {
                 font-size: 20px;
                 font-weight: regular;
                 color: $gray-darker;
             }
+
             .img-fluid {
                 @include box-shadow(0 3px 6px rgba(0, 0, 0, .16));
                 margin-bottom: 2rem;
@@ -357,124 +755,173 @@ header.o_main_header{
 
         }
 
-//========//
-// Alerts //
-//========//
-
-        // alert-info
-        // alert-warning
-        // alert-danger
-        // alert-go_to
-        // alert-exercise
-        // alert-success
-
+//------------------------------------------------------------------------------
+// Alerts
+//------------------------------------------------------------------------------
+// alert-info
+// alert-warning
+// alert-danger
+// alert-go_to
+// alert-exercise
+// alert-success
 
         .alert {
             position: relative;
             display: block;
             border-radius: 0;
             border-width: 0 0 0 3px;
+
             > h3, > .alert-title {
                 font-size: 1.642857143em;
                 line-height: 1em;
                 margin: 0 0 10px 0;
                 font-size: 1rem;
                 font-weight: $fw_bold;
+
                 &:before {
-                    content:"";
-                    font-size: 1.2em;
+                    @include inline-icomoon($i-info, 0 .5rem 0 0);
                     @include media-breakpoint-down(md) {
                         display:none;
                     }
                 }
             }
+
             &.alert-success {
                 border-color: lighten($brand-success, 30%);
                 background-color: lighten($brand-success, 45%);
                 color: darken($brand-success, 35%);
+
                 > .alert-title, > h3 {
                     color: $brand-success
                 }
+
                 > .alert-title:before, > h3:before {
-                    content: "\e625";
+                    content: '#{$i-check}';
                 }
             }
-            &.alert-info, &.tip {
+
+            &.alert-info {
                 border-color: tint-color($brand-info, 30%);
                 background-color: tint-color($brand-info, 85%);
                 color: shade-color($brand-info, 35%);
+
                 > .alert-title, > h3 {
                     color: $brand-info
                 }
+
                 > .alert-title:before, > h3:before {
-                    content: "\e639";
+                    content: '#{$i-info}';
                 }
             }
+
+            &.alert-note {
+                border-color: tint-color($brand-info, 30%);
+                background-color: tint-color($brand-info, 85%);
+                color: shade-color($brand-info, 35%);
+
+                > .alert-title, > h3 {
+                    color: $brand-info
+                }
+
+                > .alert-title:before, > h3:before {
+                    content: '#{$i-note}';
+                }
+            }
+
+            &.alert-tip, &.tip {
+                border-color: tint-color($brand-info, 30%);
+                background-color: tint-color($brand-info, 85%);
+                color: shade-color($brand-info, 35%);
+
+                > .alert-title, > h3 {
+                    color: $brand-info
+                }
+
+                > .alert-title:before, > h3:before {
+                    content: '#{$i-lightbulb}';
+                }
+            }
+
             &.alert-warning, &.warning {
                 border-color: lighten($brand-warning, 30%);
                 background-color: lighten($brand-warning, 35%);
                 color: darken($brand-warning, 35%);
+
                 > .alert-title, > h3 {
                     color: $warning;
                 }
+
                 > .alert-title:before, > h3:before {
-                    content: "\e6a4";
+                    content: '#{$i-warning}';
                 }
             }
+
             &.alert-danger {
                 border-color: lighten($brand-danger, 30%);
                 background-color: lighten($brand-danger, 40%);
                 color: darken($brand-danger, 35%);
+
                 > .alert-title, > h3 {
                     color: $brand-danger
                 }
+
                 > .alert-title:before, > h3:before {
-                    content: "\e6a4";
+                    content: '#{$i-warning}';
                 }
             }
+
             &.alert-exercise {
                 border-color: tint-color($doc_exercise, 30%);
                 background-color: tint-color($doc_exercise, 80%);
                 color: shade-color($doc_exercise, 35%);
+
                 > .alert-title, > h3 {
                     color: shade-color($doc_exercise, 35%);
                 }
+
                 > .alert-title:before, > h3:before {
-                    content: "\e709";
+                    content: '#{$i-exercise}';
                 }
             }
+
             &.alert-go_to {
                 display: inline-block;
                 border-color: tint-color($secondary, 60%);
                 background-color: tint-color($secondary, 80%);
                 border-width: 2px;
                 margin: 2em auto;
+
                 a {
                     color: shade-color($secondary, 35%);
                 }
+
                 > .alert-title, > h3 {
                     color: $secondary;
                 }
+
                 > .alert-title:before, > h3:before {
-                    content: "\e70d";
+                    content: '#{$i-overview}';
                 }
             }
         }
     }
 
-//==================//
-// On this page toc //
-//==================//
+//------------------------------------------------------------------------------
+// On this page toc
+//------------------------------------------------------------------------------
 
     aside.o_page_toc {
         display: none;
+
         @include media-breakpoint-up(lg) {
             display: block;
-            position: fixed;
+            position: -webkit-sticky;
+            position: sticky;
             top: $o-header-height;
             right: 0;
             width: $o-on-page-width;
-            padding: 3rem;
+            height: calc(100% - #{$o-header-height});
+            padding: 3rem 3rem 3rem 1rem;
             font-size: .9rem;
 
             /* &.affix {
@@ -487,12 +934,22 @@ header.o_main_header{
                 // }
             } */
         }
+
         h3 {
             text-transform: uppercase;
             font-weight: $fw_bold;
             font-size: 1rem;
             color: $gray-darker;
         }
+
+        > ul {
+            padding-left: 0;
+
+            > li > .o_page_toc_title {
+                display:none;
+            }
+        }
+
         ul {
             list-style: none;
 
@@ -501,77 +958,94 @@ header.o_main_header{
                 padding: .5rem 0;
                 font-weight: $fw_regular;
                 color: $gray-darker;
+
+                &.o_page_toc_title {
+                    display:none;
+                }
             }
         }
     }
 }
+
 .highlight {
   background: $doc_code-bg;
   color: $gray-light;
   border-radius: $border-radius;
   padding: 1rem;
   margin-bottom: ($line-height-base/2)rem;
+
   pre {
     margin-bottom:  0;
   }
 }
+
 pre {
-  font-size: 0.8em;
-  color: $gray-light;
-  font-family: $font-family-monospace;
-  font-weight:  $fw_semibold;
-  position: relative;
-  border: none;
-  max-width: 100%;
-  overflow: auto;
-  margin: 0;
-  margin-bottom: ($line-height-base / 2)rem;
+    font-size: 0.8em;
+    color: $gray-light;
+    font-family: $font-family-monospace;
+    font-weight:  $fw_semibold;
+    position: relative;
+    border: none;
+    max-width: 100%;
+    overflow: auto;
+    margin: 0;
+    margin-bottom: ($line-height-base / 2)rem;
 }
 
-//========//
-// Footer //
-//========//
-
+//------------------------------------------------------------------------------
+// Footer
+//------------------------------------------------------------------------------
 footer{
+
     > div {
         padding: 3rem;
+
         @include media-breakpoint-up(lg) {
 
             padding-left: calc(#{$o-side-nav-width} + 3rem)
         }
     }
+
     .o_get_help {
         background: $gray-100;
+
         h5 {
             color: $secondary;
             font-size: 20px;
             font-weight: $fw_bold;
             margin-bottom: 1.5rem;
+
             &::before {
                 @include inline-icon('img/icons/help.svg' , 30px, 0 1rem 0 0);
             }
         }
 
     }
+
     .o_footer_nav {
         display: flex;
+
         .o_footer_nav_title {
             font-weight: $fw_regular;
             text-transform: uppercase;
             padding: 0 1rem;
         }
+
         .accordion {
-            .accordion-collapse{
+
+            .accordion-collapse {
                 border: none;
             }
+
             .accordion-body {
                 background: $gray-lightest;
                 border-bottom: 1px solid tint-color($primary, 50%);
-                > li > a{
+                > li > a {
                     font-weight: $fw-regular;
                 }
 
             }
+
             .accordion-button::after {
                 background-size: .8rem;
                 width: .8rem;

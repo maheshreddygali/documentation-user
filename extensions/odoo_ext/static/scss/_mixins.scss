@@ -109,6 +109,16 @@
 
 }
 
+@mixin inline-icomoon($icon-content, $margin) {
+    content: '#{$icon-content}';
+    font-family: '#{$icomoon-font-family}' !important;
+    font-size: 1.8rem;
+    line-height: 1rem;
+    font-weight: $fw_regular;
+    vertical-align: middle;
+    margin: $margin;
+}
+
 //-- has_col
 
 @mixin pseudo-col(){

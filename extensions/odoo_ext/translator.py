@@ -18,9 +18,12 @@ from sphinx.writers.html5 import HTML5Translator
 ADMONITION_MAPPING = {
     # ???: 'alert-success',
 
-    'note': 'alert-info',
+    'note': 'alert-note',
+
     'hint': 'alert-info',
-    'tip': 'alert-info',
+
+    'tip': 'alert-tip',
+
     'seealso': 'alert-go_to',
 
     'warning': 'alert-warning',
