@@ -81,7 +81,7 @@
             {% set main_classes = main_classes + meta['classes'].split() %}
         {% endif %}
 
-        {% if 'has-toc' in meta %}  {# The page contains a toctree #}
+        {% if 'has_only_toc' in meta %}  {# The page only contains a toctree #}
             {% set main_classes = main_classes + ['doc-toc'] %}  {# TODO EDI do you use this ?#}
         {% endif %}
 
@@ -97,7 +97,8 @@
                             <div role="main">
                                 {% block body %} {% endblock %}
                             </div>
-                            {% if github_link and not 'has-toc' in meta %}
+                            {# Do not show the edition link for pages without content #}
+                            {% if github_link and not 'has_only_toc' in meta %}
                                 <a href="{{ github_link(mode='edit') }}" class="o_git_link">Edit on GitHub</a>
                             {% endif %}
                         </article>
@@ -106,7 +107,8 @@
             </div>
             <div id="mask"></div>
         </main>
-        {% if 'has-toc' not in meta and not pagename in toc %}
+        {# VFE TODO Check if this condition is still needed ??? #}
+        {% if pagename not in toc %}
             <aside id="o_page_toc" class="o_page_toc">
                 {% include "layout_templates/page_toc.html" %}
             </aside>

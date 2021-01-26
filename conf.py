@@ -433,9 +433,8 @@ def versionize(app, pagename, templatename, context, doctree):
         if vs != app.config.version
     ]
 
-
 def tag_toctrees(app, doctree, docname):
-    """ Adds a 'toc' metadata entry to all documents containing a toctree node"""
+    """Add a 'is-toc-page' metadata entry to all documents containing only a toctree node"""
     # document
     #   section
     #     title
@@ -443,14 +442,14 @@ def tag_toctrees(app, doctree, docname):
     #     ....
     if not len(doctree.children) == 1:
         return
-    [section] = doctree.children
+    section = doctree.children[0]
     if len(section.children) < 2:
         return
     compound = section.children[1]
     if 'toctree-wrapper' not in compound['classes']:
         return
 
-    app.env.metadata[docname]['has-toc'] = True
+    app.env.metadata[docname]['has_only_toc'] = True
 
 def localize(app, pagename, templatename, context, doctree):
     """ Adds a language switcher below the menu, requires ``canonical_root``
