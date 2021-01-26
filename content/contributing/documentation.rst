@@ -1,4 +1,5 @@
 :banner: banners/contributing.png
+:empty_page:
 
 =================================
 Contributing to the documentation
