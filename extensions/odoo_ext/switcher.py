@@ -7,6 +7,8 @@ def setup(app):
     app.add_directive('switcher', SwitcherDirective)
     app.add_directive('case', CaseDirective)
 
+# VFE FIXME separate this extension from odoo_ext (and clean?)
+
 class SwitcherDirective(Directive):
     has_content = True
 

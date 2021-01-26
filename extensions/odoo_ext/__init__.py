@@ -2,27 +2,19 @@ from . import pygments_override
 from . import switcher
 from . import translator
 
-import sphinx.environment
-try:
-    from sphinx.environment.adapters import toctree
-except ImportError:
-    toctree = None
-
 import sphinx.builders.html
 from sphinx import addnodes
+from sphinx.environment.adapters import toctree
 from docutils import nodes
 
 
 def setup(app):
-    if hasattr(app, 'set_translator'):
-        app.set_translator('html', translator.BootstrapTranslator)
-    else:
-        if getattr(app.config, 'html_translator_class', None):
-            app.warn("Overriding the explicitly set html_translator_class setting",
-                     location="odoo extension")
-        app.config.html_translator_class = 'odoo_ext.translator.BootstrapTranslator'
+    app.set_translator('html', translator.BootstrapTranslator)
 
+    # FIXME ANVFE Separate extensions and clean import in conf.py ???
     switcher.setup(app)
+    # VFE TODO check if default meta initialization is necessary.
+    # If not, remove update_meta method
     app.connect('html-page-context', update_meta)
 
 
