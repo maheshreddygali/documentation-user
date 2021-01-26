@@ -1,4 +1,4 @@
-:banner: banners/manufacturing.jpg
+
 
 ========================
 Manufacturing Management

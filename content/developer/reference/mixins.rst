@@ -1,4 +1,4 @@
-:banner: banners/mixins.jpg
+
 
 .. _reference/mixins:
 

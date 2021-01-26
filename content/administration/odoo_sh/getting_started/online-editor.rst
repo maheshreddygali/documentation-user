@@ -1,4 +1,4 @@
-:banner: banners/odoo-sh.jpg
+
 
 .. _odoosh-gettingstarted-online-editor:
 

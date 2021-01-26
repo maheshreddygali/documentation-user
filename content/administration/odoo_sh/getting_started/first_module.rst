@@ -1,4 +1,4 @@
-:banner: banners/odoo-sh.jpg
+
 
 ==================================
 Your first module

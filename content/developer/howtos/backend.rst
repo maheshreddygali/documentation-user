@@ -1,4 +1,4 @@
-:banner: banners/build_a_module.jpg
+
 
 .. queue:: backend/series
 

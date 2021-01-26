@@ -1,4 +1,4 @@
-:banner: banners/sign.jpg
+
 
 ====================
 Terms and Conditions

@@ -1,4 +1,4 @@
-:banner: banners/db_online.jpg
+
 
 
 .. _db_online:

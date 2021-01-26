@@ -1,4 +1,4 @@
-:banner: banners/orm_api.jpg
+
 
 .. _reference/orm:
 

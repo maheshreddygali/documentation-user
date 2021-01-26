@@ -1,4 +1,4 @@
-:banner: banners/helpdesk.jpg
+
 
 ========
 Helpdesk

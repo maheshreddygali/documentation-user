@@ -1,4 +1,4 @@
-:banner: banners/localization.jpg
+
 
 =======================
 Creating a Localization

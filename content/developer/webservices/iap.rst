@@ -1,4 +1,4 @@
-:banner: banners/iap.jpg
+
 :types: api
 
 .. _webservices/iap:

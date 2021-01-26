@@ -1,4 +1,4 @@
-:banner: banners/javascript.jpg
+
 
 .. _reference/jscs:
 

@@ -1,4 +1,4 @@
-:banner: banners/upgrade_api.jpg
+
 :types: api
 
 

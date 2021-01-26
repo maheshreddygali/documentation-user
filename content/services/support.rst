@@ -1,4 +1,4 @@
-:banner: banners/support.jpg
+
 
 =======
 Support

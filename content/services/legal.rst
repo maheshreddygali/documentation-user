@@ -1,4 +1,4 @@
-:banner: banners/sign.jpg
+
 :custom-css: legal.css
 
 .. ^^: cheat to have a full-width table as if this was a real toc page

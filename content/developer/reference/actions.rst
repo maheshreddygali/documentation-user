@@ -1,4 +1,4 @@
-:banner: banners/actions.jpg
+
 
 .. _reference/actions:
 

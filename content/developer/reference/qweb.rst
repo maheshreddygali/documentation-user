@@ -1,4 +1,4 @@
-:banner: banners/qweb.jpg
+
 
 .. highlight:: xml
 

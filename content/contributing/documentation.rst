@@ -1,4 +1,4 @@
-:banner: banners/contributing.png
+
 :empty_page:
 
 =================================
