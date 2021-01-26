@@ -526,8 +526,12 @@ header.o_main_header{
 // Main page content
 //------------------------------------------------------------------------------
 
-// TODO EDI this fixes the scroll height issue but surely need to be done in another way
+// TODO EDI this fixes the scroll height issue but surely needs to be re-written
 section {
+  padding-top: $o-header-height;
+  margin-top: -$o-header-height;
+}
+dt {
   padding-top: $o-header-height;
   margin-top: -$o-header-height;
 }
