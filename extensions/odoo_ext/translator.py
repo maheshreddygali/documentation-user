@@ -39,6 +39,7 @@ ADMONITION_MAPPING = {
 
 
 class BootstrapTranslator(HTML5Translator):
+    # Docutils specifications
     head_prefix = 'head_prefix'
     head = 'head'
     stylesheet = 'stylesheet'
@@ -75,7 +76,7 @@ class BootstrapTranslator(HTML5Translator):
         self.context = []
         self.section_level = 0
 
-        self.config = self.builder.config
+        # self.config = self.builder.config
         # self.highlightlang = self.highlightlang_base = self.builder.config.highlight_language
 
         self.first_param = 1
