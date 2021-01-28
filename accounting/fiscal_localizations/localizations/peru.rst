@@ -14,7 +14,7 @@ modules are available:
   document types. 
 
 
-- **l10n_pe_edi**: ncludes all technical and functional requirements to generate and validate 
+- **l10n_pe_edi**: includes all technical and functional requirements to generate and validate 
   Electronic Invoice, based on the SUNAT specification to create and process valid electronic 
   documents, for more technical detail you can access this reference.  
   `SUNAT <https://cpe.sunat.gob.pe/node/88/>`_, that keeps track of new changes and updates.  
@@ -27,26 +27,24 @@ Configuration
 Install the Peruvian localization modules
 -----------------------------------------
 
-For this, go to *Apps* and search for Peru. Then click Install in the module Peru EDI, this 
-module has a dependency with Peru - Accounting in case this last one is not installed, Odoo 
-installs it automatically within EDI.
+Go to *Apps* and search for Peru, then click Install in the module Peru EDI. This module has a 
+dependency with *Peru - Accounting*. In case this last one is not installed, Odoo installs it
+automatically within EDI.
 
 .. image:: media/peru_01_modules.png
    :align: center
-   :alt: Modules
+   :alt: The "Module" filter is set on "Peru" 
 
 .. note::
    When you install a database from scratch selecting Peru as country, Odoo will automatically 
    install the base module: Peru - Accounting.
-
-
 Configure your company
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In addition to the basic information in the Company,  we need to set Peru as the Country, this 
-is essential for the Electronic Invoice to work properly.  The field Address Type Code, 
-represents the establishment code assigned by the SUNAT when companies register their RUC 
-Unique Contributor Registration):
+In addition to the basic information in the Company, we need to set Peru as the Country, this is
+essential for the Electronic Invoice to work properly. The field **Address Type Code** represents 
+the establishment code assigned by the SUNAT when companies register their RUC (Unique Contributor 
+Registration):
 
 .. image:: media/peru_02_company.png
    :align: center
@@ -54,7 +52,7 @@ Unique Contributor Registration):
 
 
 .. tip::
-   In case the Address type code is unknown,  you can set it as default value: 0000. Be aware 
+   In case the Address type code is unknown,  you can set it as the default value: 0000. Be aware 
    that if an incorrect value is entered, the Electronic invoice validation might have errors. 
  
 .. note::
@@ -71,22 +69,23 @@ localization module, the accounts are mapped automatically in:
 - Default Account Payable.
 - Default Account Receivable
 
-The chart of accounts for Peru is based on the most updated version of the PCGE (Plan Contable 
-General Empresarial) which is grouped in several categories and is compatible with NIIF 
+The chart of accounts for Peru is based on the most updated version of the :abbr:`PCGE (Plan
+Contable General Empresarial)`, which is grouped in several categories and is compatible with NIIF
 accounting.
 
 Accouting Seetings
 ------------------
+
 Once the modules are installed and the basic information of your company is set, you need to 
-configure the elements required for Electronic Invoice, for this you can access to 
-:menuselection:`Accounting --> Settings --> Peruvian Localization`
+configure the elements required for Electronic Invoice. For this, go to :menuselection:`Accounting 
+--> Settings --> Peruvian Localization`.
 
 Basic Concepts
 ~~~~~~~~~~~~~~
 Here are some terms that are essential on the Peruvian localization: 
 
 - **EDI**: Electronic Data Interchange, which in this refers to the Electronic Invoice. 
-- **SUNAT**: is the organization which enforces customs and taxation in Peru.
+- **SUNAT**: is the organization that enforces customs and taxation in Peru.
 - **OSE**: Electronic Service Operator (Operador de Servicios Electrónicos),
     `SUNAT Reference <https://cpe.sunat.gob.pe/aliados/ose#:~:text=El%20Operador%20de%20Servicios%20Electr%C3%B3nicos%20(OSE)%20es%20qui%C3%A9n%20se%20encarga,otro%20documento%20que%20se%20emita>`_.
 - **CDR**: Receipt certificate (Constancia de Recepción) 
@@ -95,17 +94,18 @@ Here are some terms that are essential on the Peruvian localization:
 
 Signature Provider
 ~~~~~~~~~~~~~~~~~~
-As part of  the requirements for Electronic Invoice is Peru, your company need 
-to select a Signature Provider, that will take care of the document signing process 
-and to manage the SUNAT validation response , Odoo offers three options:
 
-#. IAP (Odoo In App Purchase)
+As part of  the requirements for Electronic Invoice is Peru, your company needs to select a
+Signature Provider that will take care of the document signing process and manage the SUNAT
+validation response. Odoo offers three options:
+
+#. IAP (Odoo In-App Purchase)
 #. Digiflow
 #. SUNAT
 
-Please refer to the sections belows to check the details and considerations for each option.
+Please refer to the sections below to check the details and considerations for each option.
 
-IAP (Odoo In App Purchase)
+IAP (Odoo In-App Purchase)
 **************************
 This is the default and the suggested option in Odoo estadard, as you don’t need to have a 
 certificate or a signature.
@@ -114,16 +114,21 @@ certificate or a signature.
    :align: center
    :alt: IAP
    
-**What is the IAP?**
-This is a signature service offered directly by Odoo, the service takes care of the next process: 
+What is the IAP?
+^^^^^^^^^^^^^^^^
+
+This is a signature service offered directly by Odoo, the service takes care of the next process:
+
 #. Provides the Electronic invoice Certificate, so you do not need to acquire one by yourself.
-#. Send the document to the OSE , in this case Digiflow.
+#. Send the document to the OSE, in this case, Digiflow.
 #. Receive the OSE validation and CDR.
 
-**How does it work?**
-The service requires Credits in order to process your electronic documents. Odoo will provide 
-1000 credits for free in new databases, after these credits are consumed you need to buy a 
-Credit Package. 
+How does it work?
+^^^^^^^^^^^^^^^^^
+
+The service requires Credits in order to process your electronic documents. Odoo will provide 1000
+credits for free in new databases. After these credits are consumed, you need to buy a Credit
+Package.
 
 | Credits | EUR |
 |---------|-----|
@@ -136,18 +141,18 @@ Credit Package.
 The credits are consumed per each document that is sent to the OSE. 
 
 .. important::
-   In case that you have a validation error and the document needs to be sent one more time, and 
-   additional credit will be charged, so it’s paramount that before sending your document to the 
-   OSE you verify all information is correct.
+   If you have a validation error and the document needs to be sent one more time, additional credit 
+   will be charged. Therefore, it is paramount that you verify all information is correct before 
+   sending your document to the OSE.
 
-**What do you need to do?**
+What do you need to do?
+^^^^^^^^^^^^^^^^^^^^^^^
 
 - In Odoo, once your enterprise contract is activated and you start working in Production, you 
   will need to buy credits once the first 1000 are consumed.
-
 - As Digiflow is the OSE used in the IAP,  you will need to affiliate it as the official OSE for 
-  your company in the SUNAT website, this is a simple process. For more information please check 
-  the: `Next manual <https://drive.google.com/file/d/1BkrMTZIiJyi5XI0lGMi3rbMzHddOL1pa/view?usp=sharing>`_.
+  your company on the SUNAT website. This is a simple process. For more information, please check
+  `this manual <https://drive.google.com/file/d/1BkrMTZIiJyi5XI0lGMi3rbMzHddOL1pa/view?usp=sharing>`_.
    
 Digiflow
 ********
@@ -180,7 +185,7 @@ in your configuration. In this case you will need to consider:
 
 Testing environment
 ~~~~~~~~~~~~~~~~~~~
-Odoo provides a testing environment that can be activated before your company goes to production. 
+Odoo provides a testing environment that can be activated before your company goes into production. 
 
 When using the testing environment and the IAP signature, you don’t need to buy testing credits 
 for your transactions as all of them are validated by default.
@@ -191,9 +196,10 @@ for your transactions as all of them are validated by default.
 
 Certificate
 ~~~~~~~~~~~
-In case you  don’t use Odoo IAP, in order to generate the electronic invoice signature, a digital 
-certificate with extension (.pfx) is required, proceed to this section and load your 
-file and password.
+
+In case you don’t use Odoo IAP, in order to generate the electronic invoice signature, a digital
+certificate with the extension ``.pfx`` is required. Proceed to this section and load your file and
+password.
 
 .. image:: media/peru_05_Certificate.png
    :align: center
@@ -208,8 +214,8 @@ directly to its services and get the currency rate either automatically or manua
    :align: center
    :alt: Multicurrency Service
    
-Please refer to the next section in our documentation for more information about 
-`Multicurrency <https://www.odoo.com/documentation/user/14.0/accounting/others/multicurrencies/how_it_works.html>`_.
+Please refer to the next section in our documentation for more information about :doc:`multicurrency
+<../../others/multicurrencies/how_it_works>`.
 
 
 Configure Master data
@@ -263,14 +269,16 @@ to fill anything on this view:
 
 Journals
 ~~~~~~~~
-Additional to the standard fields on the Journals,for the Peruvian localization When creating 
-sales journals the next information must be filled in: 
+
+When creating Sales Journals, the following information must be filled, in addition to the standard
+fields on the Journals:
 
 Use Documents 
 *************
-This field is used to define if the journal will use Document Types, it’s only applicable on 
-Purchase and Sales journals which are the ones that can be related to the different set of 
-document types available in Peru. By default all the sales journals created use documents. 
+
+This field is used to define if the journal will use Document Types. It is only applicable to 
+Purchase and Sales journals, which are the ones that can be related to the different set of 
+document types available in Peru. By default, all the sales journals created use documents. 
 
 Electronic Data Interchange
 ***************************
@@ -282,7 +290,7 @@ This  section indicates which EDI workflow is used in the invoice, for Peru we m
    :alt: Journal EDI
 
 .. tip::
-  By default the value Factur-X (FR) is always displayed but you can unchecked it manually.  
+   By default, the value Factur-X (FR) is always displayed, but you can uncheck it manually.  
 
 Partner
 ~~~~~~~
@@ -316,18 +324,19 @@ Customer invoice
 
 EDI Elements
 ~~~~~~~~~~~~
+
 Once you have configured your master data, the invoices can be created from your sales order or
-manually, additional to basic invoice information described in 
-`this section  <https://www.odoo.com/documentation/user/14.0/accounting/receivables/customer_invoices/overview.html/>`_
-there are a couple of fields required as part of the Peru EDI: 
+manually. Additional to the basic invoice information described on :doc:`our page about the
+invoicing process <../../receivables/customer_invoices/overview>`, there are a couple of fields 
+required as part of the Peru EDI:
 
 
 - **Document type**: The default value is “Factura Electronica” but  you can manually change the 
   document type if needed and select Boleta for example. 
 
-.. image:: media/peru_12_document_type.png
-   :align: center
-   :alt: Invoice document type
+  .. image:: media/peru_12_document_type.png
+     :align: center
+     :alt: Invoice document type
 
 - **Operation type**: This value is required for Electronic Invoice and indicates the transaction 
   type, the default value is “Internal Sale” but another value can be selected manually when needed, 
@@ -350,10 +359,9 @@ there are a couple of fields required as part of the Peru EDI:
 Invoice validation
 ~~~~~~~~~~~~~~~~~~
 
-Once you check all the information in your invoice is correct you can proceed to validate it, 
-this action registers the account move in the accounting and triggers the Electronic invoice 
-workflow to send it to the OSE and the SUNAT, the next message is displayed at the top of the 
-invoice:
+Once you check all the information in your invoice is correct, you can proceed to validate it. This
+action registers the account move and triggers the Electronic invoice workflow to send it to the OSE
+and the SUNAT. The following message is displayed at the top of the invoice:
 
 .. image:: media/peru_15_posted_invoice.png
    :align: center
@@ -365,7 +373,7 @@ Asynchronous means that the document is not sent automatically after the invoice
 Electronic Invoice Status
 *************************
 **To be Sent**: To be sent: Indicates the document is ready to be sent to the OSE, this can be 
-done either automatically by Odoo with a cron that runs every hour,  or the user can send it 
+done either automatically by Odoo with a *cron* that runs every hour, or the user can send it 
 immediately by clicking on the button “Sent now”.
 
 .. image:: media/peru_15_sent_manual.png
@@ -446,9 +454,9 @@ Special Use cases
 
 Cancelation process
 *******************
-There are some scenarios that require an invoice cancellation, example when an invoice was created 
-by mistake. If the invoice was already sent and validated by the SUNAT, the correct way to proceed 
-is by clicking on the button Request Cancellation:
+Some scenarios require an invoice cancellation, for example, when an invoice was created by mistake. 
+If the invoice was already sent and validated by the SUNAT, the correct way to proceed is by 
+clicking on the button Request Cancellation:
 
 .. image:: media/peru_20_cancellation.png
    :align: center
@@ -460,7 +468,7 @@ In order to cancel an invoice you will need to provide a cancellation Reason.
 Electronic Invoice Status
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 **To Cancel**:  Indicates the cancellation request is ready to be sent to the OSE, this can be done 
-either automatically by Odoo with a cron that runs every hour, or the user can send it 
+either automatically by Odoo with a *cron* that runs every hour, or the user can send it 
 immediately by clicking on the button “Send now”. Once it is sent, a cancellation ticket is 
 created, as a result the next message and CDR File are logged in the chatter:
 
@@ -483,7 +491,7 @@ Cancelation process
 *******************
 When creating exportation invoices, take into account the next considerations:
 
-- The Identification type on your customer must be Foreing ID. 
+- The Identification type on your customer must be Foreign ID. 
 - Operation type in your invoice must be an Exportation one. 
 - The taxes included in the invoice lines should be EXP taxes.
 
@@ -493,7 +501,7 @@ When creating exportation invoices, take into account the next considerations:
 
 Advance Payments
 ****************
-#. Create the advance payment Invoice and apply it’s related payment. 
+#. Create the advance payment Invoice and apply its related payment. 
 #. Create the final invoice without considering the advance payment. 
 #. Create a credit note for the Final invoice with the advance payment amount. 
 #. Reconcile the Credit note with the final invoice. 
@@ -520,8 +528,8 @@ By default the Credit Note is set in the document type:
    :align: center
    :alt: Credit Note document type
 
-To finish the workflow please follow the instructions on 
-`this section <https://www.odoo.com/documentation/user/14.0/accounting/receivables/customer_invoices/credit_notes.html>`_.
+To finish the workflow please follow the instructions on :doc:`our page about Credit Notes
+<../../receivables/customer_invoices/credit_notes>`.
 
 .. note::
    The EDI workflow for the SUNAT in the same way as the invoices. 
@@ -529,7 +537,7 @@ To finish the workflow please follow the instructions on
 
 Debit Notes
 ------------
-As part of the Preuvian localization, besides creating credit notes from an existing document 
+As part of the Peruvian localization, besides creating credit notes from an existing document 
 you can also create debit Notes. For this just use the button “Add Debit Note”.
 
 By default the Debit Note is set in the document type.
